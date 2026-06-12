@@ -22,7 +22,7 @@ impl Rng {
         z ^ (z >> 31)
     }
 
-    /// Value 0..n
+    // Value 0..n
     pub fn below(&mut self, n: u64) -> u64 {
         if n == 0 {
             return 0;
@@ -30,23 +30,23 @@ impl Rng {
         self.next_u64() % n
     }
 
-    /// Returns true with roughly the given percent probability (0..=100)
+    // Returns true with roughly the given percent probability (0..=100)
     pub fn chance(&mut self, percent: u64) -> bool {
         self.below(100) < percent
     }
 }
 
-/// Knobs controlling how the two streams are generated and corrupted
+// Knobs controlling how the two streams are generated and corrupted
 #[derive(Debug, Clone)]
 pub struct ScenarioConfig {
-    /// Random seed fixes the entire scenario for reproducibility
+    // Random seed fixes the entire scenario for reproducibility
     pub seed: u64,
-    /// How many event-time ticks the streams span, more ticks = longer run
+    // How many event-time ticks the streams span, more ticks = longer run
     pub ticks: u64,
-    /// "Width" of the order book
+    // "Width" of the order book
     pub price_levels: i64,
-    /// Probability that a given (tick, level) actually produces an
-    /// event.
+    // Probability that a given (tick, level) actually produces an
+    // event.
     pub emit_percent: u64,
 
     // The three knobs:
@@ -70,9 +70,9 @@ impl Default for ScenarioConfig {
 }
 
 pub struct Scenario {
-    /// Events in the order the engine receives them with lag and reordering applied
+    // Events in the order the engine receives them with lag and reordering applied
     pub arrivals: Vec<Event>,
-    /// Planted divergence event, if any
+    // Planted divergence event, if any
     pub planted_at: Option<(u64, i64)>,
 }
 

@@ -7,9 +7,9 @@ pub struct EventTime(pub u64);
 // Two streams for current use case (would use majority logic for N streams)
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum StreamId {
-    /// Exchange Feed
+    // Exchange Feed
     A,
-    /// Order Book
+    // Order Book
     B,
 }
 
