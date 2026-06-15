@@ -1,11 +1,11 @@
 use clap::Parser;
 
-use skew::replay::{ generate, ScenarioConfig };
-use skew::run::run;
+use drift::replay::{ generate, ScenarioConfig };
+use drift::run::run;
 
 // Scenario knobs, all optional with sensible defaults
 #[derive(Parser)]
-#[command(about = "Run the skew divergence engine over a generated scenario")]
+#[command(about = "Run the drift divergence engine over a generated scenario")]
 struct Args {
     // How many event-time ticks the streams span
     #[arg(long, default_value_t = 100)]
@@ -71,7 +71,7 @@ fn main() {
     let total = scenario.arrivals.len();
     let found = run(&scenario, args.lateness);
 
-    println!("skew demo");
+    println!("drift demo");
     println!("  events fed:        {total}");
     println!("  lag_ticks:         {}", cfg.lag_ticks);
     println!("  reorder_percent:   {}", cfg.reorder_percent);

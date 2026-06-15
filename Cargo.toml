@@ -1,5 +1,5 @@
 [package]
-name = "skew"
+name = "drift"
 version = "0.1.0"
 edition = "2021"
 description = "A real-time stream divergence engine: detects when two streams that should agree genuinely diverge, distinguishing real disagreement from transient lag."
