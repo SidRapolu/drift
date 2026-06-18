@@ -28,7 +28,7 @@ divergence. That's the whole trick.
 
 `L` is the knob. Bigger catches later stragglers but buffers more and reports
 slower; smaller is fast and cheap but starts dropping real stragglers as "too
-late." There's no universal value — it depends how messy the feeds are.
+late." This value ultimately comes down to the service intent and how messy the feeds are.
 
 ```
 cargo run -- --no-plant                          # clean, finds nothing
