@@ -1,14 +1,10 @@
 # Drift
 
-Watches two streams that should agree and flags when they actually diverge —
-without false-alarming every time one stream is just running behind.
+Watches two streams that should agree and flags when they actually diverge—without false-alarming every time one stream is just running behind.
 
 ## Why
 
-Comparing two streams is easy; telling a real disagreement apart from one stream
-lagging is the hard part. I wanted to build that timing problem properly, in Rust.
-The case I had in mind is an exchange feed vs. an order book you rebuild yourself —
-they should always match, and a real mismatch means your view of the market is off.
+Comparing two streams is easy, but telling a real disagreement apart from one stream lagging is the challenge. I wanted to build that timing problem properly, in Rust for perfomance. The case I had in mind is an exchange feed vs. an order book you rebuild yourself. They should always match, and a real mismatch means your view of the market is off.
 
 ## How it works
 
